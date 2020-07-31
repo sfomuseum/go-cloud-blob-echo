@@ -55,7 +55,7 @@ $> bin/echo -from 'file:///usr/local/data/test'
 hello world
 ```
 
-This packages uses the [go-cloud-s3blob](https://github.com/aaronland/go-cloud-s3blob) library to handle reads and writes to S3. `go-cloud-s3blob` is thing wrapper around the default go-cloud S3 blob opener to check for a credentials parameter (in blob URIs) and use it to assign AWS S3 session credentials.
+This packages imports the [go-cloud-s3blob](https://github.com/aaronland/go-cloud-s3blob) package; it is a thin wrapper around the default go-cloud S3 blob opener to check for a credentials parameter (in blob URIs) and use it to assign AWS S3 session credentials. For example:
 
 ```
 $> echo 'this is a test' \
@@ -67,6 +67,17 @@ $> bin/echo \
 	-from 's3blob://s3-bucket/misc/test.txt?region=us-east-1&credentials=default'
 this is a test
 ```
+
+#### Credentials
+
+Credentials for `s3blob:///` URIs are defined as string labels. They are:
+
+| Label | Description |
+| --- | --- |
+| `env:` | Read credentials from AWS defined environment variables. |
+| `iam:` | Assume AWS IAM credentials are in effect. |
+| `{AWS_PROFILE_NAME}` | This this profile from the default AWS credentials location. |
+| `{AWS_CREDENTIALS_PATH}:{AWS_PROFILE_NAME}` | This this profile from a user-defined AWS credentials location. |
 
 #### Known knowns
 

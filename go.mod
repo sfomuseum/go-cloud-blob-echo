@@ -1,4 +1,4 @@
-module github.com/sfomuseum/gocloud-blob-echo
+module github.com/sfomuseum/go-cloud-blob-echo
 
 go 1.12
 

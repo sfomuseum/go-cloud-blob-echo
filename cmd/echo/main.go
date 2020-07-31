@@ -1,14 +1,14 @@
 package main
 
 import (
-	_ "gocloud.dev/blob/fileblob"
 	_ "github.com/aaronland/go-cloud-s3blob"
+	_ "gocloud.dev/blob/fileblob"
 )
 
 import (
 	"context"
 	"flag"
-	"github.com/sfomuseum/gocloud-blob-echo"
+	"github.com/sfomuseum/go-cloud-blob-echo"
 	"log"
 )
 

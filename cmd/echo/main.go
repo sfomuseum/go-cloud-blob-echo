@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "gocloud.dev/blob/fileblob"
+	_ "github.com/aaronland/go-cloud-s3blob"
 )
 
 import (
